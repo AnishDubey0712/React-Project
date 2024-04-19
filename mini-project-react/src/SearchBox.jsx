@@ -18,6 +18,7 @@ export default function SearchBox(){
         tempMax: jsonResponse.main.temp_max,
         humidity: jsonResponse.main.humidity,
         weather: jsonResponse.weather[0].description,
+        name: jsonResponse.name,
     }
     console.log(result)
     }
