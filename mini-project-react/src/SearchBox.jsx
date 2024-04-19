@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import "./SearchBox.css"
 import { useState } from 'react';
 import API_KEY from './API_KEY';
-export default function SearchBox(){
+export default function SearchBox({updateInfo}){
     
     let [city ,setCity]= useState("");
     const API_URL = "https://api.openweathermap.org/data/2.5/weather"
@@ -21,14 +21,16 @@ export default function SearchBox(){
         name: jsonResponse.name,
     }
     console.log(result)
+    return result
     }
     let handleChange = (event)=>{
         setCity(event.target.value)
     }
-    let handleSubmit = (event)=>{
+    let handleSubmit = async(event)=>{
         event.preventDefault();//preventDefault is used to prevent default functioning of event like page reload
         setCity("");
-        getWeatherInfo();
+       let newinfo = await getWeatherInfo();
+       updateInfo(newinfo)
     }
     return(
         <div className='SearchBox'>

@@ -5,16 +5,9 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import './InfoBox.css';
 
-export default function InfoBox(){
+export default function InfoBox({info}){
     const IMG_URL = "https://plus.unsplash.com/premium_photo-1661897016268-b77ad5186d02?q=80&w=1955&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    let info = {
-        humidity: 30,
-        temp: 31.9,
-        tempMax: 31.9,
-        tempMin: 31.9,
-        weather:"scattered clouds",
-        name : "Aurangabad"
-        }
+    
 
     return(
         <div className="InfoBox">
